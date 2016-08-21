@@ -1,0 +1,34 @@
+function palindrome(str) {
+  //converting the str to an array
+  str = str.toLowerCase();
+  str = str.replace(/\./g, "");
+  str = str.replace(/\(|\)/g, "");
+  var string = "abcdefghijklmnopqrstuvwxz0123456789";
+  var array = [];
+  for ( var i = 0; i < str.length; i++) {
+    if ( string.match(str[i]) ) {
+      array.push(str[i]);
+    }
+  }
+
+  var yarra = array.slice();
+  yarra.reverse();
+  
+  console.log(array);
+  console.log(yarra);
+  
+  array = array.join("");
+  yarra = yarra.join("");
+  
+  if (array === yarra) {
+    return true;
+  }
+  
+  else {
+    return false;
+  }
+}
+
+  
+
+palindrome("0_0 (: /-\ :) 0-0");
