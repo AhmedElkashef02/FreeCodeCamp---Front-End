@@ -1,0 +1,17 @@
+var element = 0;
+function deletion(val) {
+  if (val !== element) {
+    return val;
+  }
+}
+
+function destroyer(arr) {
+  var new_array = arguments[0];
+  for (var i = 1; i < arguments.length; i++) {
+    element = arguments[i];
+    new_array = new_array.filter(deletion);
+  }
+  return new_array;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
