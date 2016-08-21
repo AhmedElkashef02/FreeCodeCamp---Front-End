@@ -1,0 +1,12 @@
+
+function bouncer(arr) {
+  var no = [false, 0, "", null, undefined];
+  var array = arr.filter(function(val) {
+    if (no.indexOf(val) === -1) {
+      return val; 
+    }
+  });
+  return array;
+}
+
+bouncer([7, "ate", "", false, 9]);
