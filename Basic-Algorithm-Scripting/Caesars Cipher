@@ -1,0 +1,28 @@
+var array = [];
+function cipher(letter) {
+  if (letter !== " " && letter !== "!" && letter !== "." && letter !== "?") {
+    if ( letter.charCodeAt(0) > 77) {
+      return String.fromCharCode(letter.charCodeAt(0) - 13);
+    }
+    else {
+      return String.fromCharCode(letter.charCodeAt(0) + 13);
+    }
+  }
+  else {
+    return letter;
+  }
+}
+
+
+function rot13(str) { // LBH QVQ VG!
+  str = str.split("");
+  array = str;
+  console.log(array);
+  array = array.map(cipher);
+  array = array.join("");
+  return array;
+}
+
+// Change the inputs below to test
+rot13("SERR YBIR?");
+
