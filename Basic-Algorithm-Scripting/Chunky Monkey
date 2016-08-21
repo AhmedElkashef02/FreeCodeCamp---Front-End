@@ -1,0 +1,29 @@
+
+function chunkArrayInGroups(arr, size) {
+  var new_array = [];
+  if (arr.length % 2 === 0){   //even number
+
+    for ( var i = 0; (i+size) <= arr.length; i+=size) {
+      new_array.push(arr.slice(i,i+size));
+      if ( i+size+size > arr.length && i < size) {
+        new_array.push(arr.slice(i+size,arr.length));
+      }
+    }
+    console.log(new_array);
+    return new_array;
+  }
+  
+  else {
+    var last = [];
+    last.push(arr[arr.length-1]);
+    arr.pop();
+    for ( var j = 0; (j+size) <= arr.length; j+=size) {
+      new_array.push(arr.slice(j,j+size));
+    }
+    new_array.push(last);
+  }
+  return new_array;
+}
+
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)
