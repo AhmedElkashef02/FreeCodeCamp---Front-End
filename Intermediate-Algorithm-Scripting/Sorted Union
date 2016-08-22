@@ -1,0 +1,20 @@
+
+function uniteUnique(arr) {
+  var args = Array.from(arguments);
+  var input = [];
+  for (var chunk in args) {
+    for ( var item in args[chunk]) {
+      input.push(args[chunk][item]);
+    }
+  }
+  // gets all input in one array [1,3,2,5,2,1,4,2,1]
+  var answer = [];
+  for (var i = 0; i < input.length; i++) {
+    if (answer.indexOf(input[i]) === -1 && input[i] !== 0) {
+      answer.push(input[i]);
+    }
+  }
+  return answer;
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
