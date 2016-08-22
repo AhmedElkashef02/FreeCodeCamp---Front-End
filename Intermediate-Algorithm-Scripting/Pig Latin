@@ -1,0 +1,33 @@
+
+function translatePigLatin(str) {
+  //deals with the voules part
+  var voules = ['a','o','e','i','u'];
+  var last_letter = str.substr(str.length-1);
+  var first_letter = str.substr(0,1);
+  var newstr;
+  if (voules.indexOf(first_letter) === -1) { //if the first chars are not vowels
+    
+    var stop;
+    
+    for (var i =0; i<str.length;i++) {
+      if(str[i].match(/a|i|u|e|o/)) {
+        stop = i;
+        break;
+      }
+    }
+    newstr = str.substr(stop);
+    first_letter = str.substr(0,stop);
+    newstr = newstr.split("");
+    newstr.push(first_letter, "ay");
+    newstr = newstr.join("");
+
+  }
+  else { // if the first char is a voule
+    str = str.split("");
+    str.push('way');
+    newstr = str.join("");
+  }
+  return newstr;
+}
+
+translatePigLatin("algorithm");
