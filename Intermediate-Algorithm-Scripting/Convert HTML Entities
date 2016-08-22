@@ -1,0 +1,25 @@
+
+function convertHTML(str) {
+  for ( var i = 0; i < str.length; i++ ) {
+    console.log(str[i]);
+    if ( str[i].match(/&/) ) {
+      str = str.replace(str[i], "&amp;");
+    }
+    else if ( str[i].match(/</) ) {
+      str = str.replace(str[i], "&lt;");
+    }
+    else if ( str[i].match(/>/) ) {
+      str = str.replace(str[i], "&gt;");
+    }
+    else if ( str[i].match(/\"/) ) {
+      str = str.replace(str[i], "&quot;");
+    }
+    else if ( str[i].match(/'/) ) {
+      str = str.replace(str[i], "&apos;");
+    }
+  }
+  
+  return str;
+}
+
+convertHTML('Stuff in "quotation marks"');
