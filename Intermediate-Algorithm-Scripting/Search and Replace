@@ -1,0 +1,16 @@
+
+function myReplace(str, before, after) {
+  //str = str.split(" ");
+  if (before[0].match(/[A-Z]/)) {
+    after = after.replace(after[0],function(letter) {
+      return letter.toUpperCase();
+    });
+  }
+  
+  before = new RegExp(before,"i");
+  str = str.replace(before, after);
+  
+  return str;
+}
+
+myReplace("He is Sleeping on the couch", "Sleeping", "sitting");
