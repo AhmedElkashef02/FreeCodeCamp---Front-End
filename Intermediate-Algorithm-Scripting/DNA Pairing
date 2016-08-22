@@ -1,0 +1,35 @@
+
+function pairElement(str) {
+  str = str.split("");
+  var array = [];
+  var answer = [];
+  
+  for ( var item in str ) {
+    switch(str[item]) {
+      case "G":
+        array = [];
+        array.push("G","C");
+        answer.push(array);
+        break;
+      case "C":
+        array = [];
+        array.push("C","G");
+        answer.push(array);
+        break;
+      case "T":
+        array = [];
+        array.push("T","A");
+        answer.push(array);
+        break;
+      case "A":
+        array = [];
+        array.push("A","T");
+        answer.push(array);
+        break;
+    }
+  }
+  return answer;
+  
+}
+
+pairElement("GCG");
