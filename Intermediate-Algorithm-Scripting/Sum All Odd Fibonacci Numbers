@@ -1,0 +1,23 @@
+
+function sumFibs(num) {
+  //generating the fibonacci sequence
+  var seq = [1,1];
+  for ( var i = 1; i <= num; i++) {
+    if ( seq[i] <= num ) {
+      seq.push(seq[i]+seq[i-1]);
+    }
+  }
+  
+  //now adjusting the end of that sequence and making the values odd
+  seq = seq.filter(function(value) {
+    return ((value <= num) && (value % 2 !== 0));
+  });
+  
+  //summing the sequence
+  var summation = seq.reduce(function(a,b) {
+    return (a+b);
+  });
+  return summation;
+}
+
+sumFibs(4);
