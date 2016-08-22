@@ -1,0 +1,21 @@
+
+function diffArray(arr1, arr2) {
+  var newArr1 = [];
+  var newArr2 = [];
+  var newArr;
+  newArr1 = arr1.filter(function(value) {
+    if (arr2.indexOf(value) === -1) {
+      return value;
+    }
+  });
+  
+  newArr2 = arr2.filter(function(value) {
+    if (arr1.indexOf(value) === -1) {
+      return value;    
+    }
+  });
+  newArr = newArr1.concat(newArr2);
+  return newArr;
+}
+
+diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]);
