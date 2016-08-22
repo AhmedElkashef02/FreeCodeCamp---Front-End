@@ -1,0 +1,20 @@
+
+function fearNotLetter(str) {
+  var count = str.charCodeAt(0);
+  var ending = str.charCodeAt(str.length-1);
+  
+  for ( var char in str) { //char is an index
+    char = parseInt(char);
+    console.log(str[char]);
+    if (str[char] == str[str.length-1]) {
+      break;
+    }
+    if ( ( str.charCodeAt(char) === str.charCodeAt(char+1)-1 ) === false ) {
+      return String.fromCharCode(str.charCodeAt(char)+1);
+    }
+  }
+  return undefined;
+  
+}
+
+fearNotLetter("abcde");
