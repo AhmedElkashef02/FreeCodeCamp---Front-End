@@ -1,0 +1,23 @@
+
+function addTogether(x) {
+  var args = Array.from(arguments);
+
+  for ( var argument = 0; argument < args.length; argument++) {
+    if (typeof(args[argument]) !== "number" ) {
+      return undefined;
+    }
+  }  
+  if (args.length === 1) {
+    return function(y) {
+      if ( typeof(y) !== "number" ) {
+        return undefined;
+      }
+      return x+y;
+    };
+  }
+  else {
+    return arguments[0] + arguments[1];
+  }
+}
+
+addTogether(2)(3);
