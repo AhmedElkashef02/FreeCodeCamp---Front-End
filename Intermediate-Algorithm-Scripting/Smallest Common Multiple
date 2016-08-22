@@ -1,0 +1,34 @@
+
+function smallestCommons(arr) {
+  arr = arr.sort();
+  var array = []; //the array that will store all the divisible numbers
+  
+  for ( var i = arr[0]; i <= arr[1]; i++) { //add the numbers between 1 and 5
+    array.push(i);
+  }
+  
+  var value = false;
+  var LCM = 1; // the numbers that will increment to be LCMs in the future
+  while ( value === false ) { // if value is true, then it's LCM
+    
+    for ( var num = 0; num < array.length; num++ ) {
+      if ( LCM % array[num] === 0 ) { // if it is divisible 
+        value = true;
+      }
+      else { // not divisible
+        value = false;
+        break;
+      }
+    }
+    if ( value === true ) {
+      break;
+    }
+    
+    LCM++;
+    
+  }
+  return LCM;
+}
+
+
+smallestCommons([5,1]);
