@@ -1,0 +1,62 @@
+
+function sym(args) {
+  var array = Array.from(arguments);
+  array = array.reduce(function(set1,set2) {
+    return symmetricDifference(set1,set2);
+  });
+  return array;
+}
+
+function symmetricDifference(set1,set2) {
+  var Difference = [];
+  //cleaning the first set
+  var set11 = []; 
+  for ( var num in set1 ) {
+    if ( set11.indexOf(set1[num]) === -1 ) {
+      set11.push(set1[num]);
+    }
+  }
+  //cleaning the second set
+  var set22 = [];
+  for ( var num in set2 ) {
+    if ( set22.indexOf(set2[num]) === -1 ) {
+      set22.push(set2[num]);
+    }
+  }
+  
+  //checking if something in set1 is in set2
+  var value = false;
+  for ( var x = 0; x < set11.length; x++) { //returns set1 values not in set2
+    for ( var y = 0; y < set22.length; y++) {
+      if (set11[x] !== set22[y] ) {
+        value = true;
+      }
+      else {
+        value = false;
+        break;
+      }
+    }
+    if ( value === true) {
+      Difference.push(set11[x]);
+    }
+  }
+  //checking if something in set2 is in set1
+  value = false;
+  for ( var q = 0; q < set22.length; q++) { //returns set2 values not in set1
+    for ( var w = 0; w < set11.length; w++) {
+      if (set22[q] !== set11[w] ) {
+        value = true;
+      }
+      else {
+        value = false;
+        break;
+      }
+    }
+    if ( value === true) {
+      Difference.push(set22[q]);
+    }
+  }
+  return Difference;
+}
+
+sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]);
