@@ -1,0 +1,136 @@
+
+function makeFriendlyDates(arr) { 
+  var begin = arr[0];
+  var end = arr[1];
+  var months = ["January","February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  
+  begin = begin.split("-");
+  var begin_year = parseInt(begin[0]);
+  var begin_month = parseInt(begin[1]);
+  var begin_day = parseInt(begin[2]);
+  
+  end = end.split("-");
+  var end_year = parseInt(end[0]);
+  var end_month = parseInt(end[1]);
+  var end_day = parseInt(end[2]);
+  
+  var answer = [];
+  var begin_dayy;
+  var end_dayy;
+  switch (begin_day) {
+      case 1:
+        begin_dayy = '1st';
+        break;
+      case 2:
+        begin_dayy = '2nd';
+        break;
+      case 3:
+        begin_dayy = '3rd';
+        break;
+      default:
+        begin_dayy = begin_day.toString() + 'th';
+    }
+    switch (end_day) {
+      case 1:
+        end_dayy = '1st';
+        break;
+      case 2:
+        end_dayy = '2nd';
+        break;
+      case 3:
+        end_dayy = '3rd';
+        break;
+      default:
+        end_dayy = end_day.toString() + 'th';
+    }
+  
+  
+  if ( begin_year === end_year && begin_year !== 2016) { // if same year
+    if ( begin_month === end_month ) {
+      if ( begin_day === end_day ) {
+        answer.push(months[begin_month-1] + ' ' + begin_dayy + ', ' + begin_year);
+      }
+      else {
+        answer.push(months[begin_month-1] + ' ' + begin_dayy + ', ' + begin_year, end_dayy );
+      }
+    }
+    else {
+      answer.push(months[begin_month-1] + ' ' + begin_dayy + ', ' + begin_year, months[end_month-1] + ' ' + end_dayy );
+    }
+  }
+  
+  else if ( begin_year === end_year && begin_year === 2016) { // if same year and 2016
+    if ( begin_month === end_month ) {
+      if ( begin_day === end_day ) {
+        answer.push(months[begin_month-1] + ' ' + begin_dayy);
+      }
+      else {
+        answer.push(months[begin_month-1] + ' ' + begin_dayy, end_dayy );
+      }
+    }
+    else {
+      answer.push(months[begin_month-1] + ' ' + begin_dayy, months[end_month-1] + ' ' + end_dayy );
+    }
+  }
+  
+  else if ( begin_year !== end_year && begin_year === 2016 ) {
+    if ( isItOneYear(begin,end) ) {
+      answer.push(months[begin_month-1] + ' ' + begin_dayy, months[end_month-1] + ' ' + end_dayy);
+    }
+    else {
+      answer.push(months[begin_month-1] + ' ' + begin_dayy + ', ' + begin_year, months[end_month-1] + ' ' + end_dayy + ', ' + end_year);
+    }
+  }
+  
+  
+  else if ( begin_year !== end_year && begin_year !== 2016) {
+    if ( isItOneYear(begin,end) ) {
+      answer.push(months[begin_month-1] + ' ' + begin_dayy + ', ' + begin_year, months[end_month-1] + ' ' + end_dayy);
+    }
+    else {
+      answer.push(months[begin_month-1] + ' ' + begin_dayy + ', ' + begin_year, months[end_month-1] + ' ' + end_dayy + ', ' + end_year);
+    }
+  }
+  
+  return answer;
+}
+
+
+
+function isItOneYear(date1, date2) { //tells me if it's the second year or not
+  
+  var date1_year = parseInt(date1[0]);
+  var date1_month = parseInt(date1[1]);
+  var date1_day = parseInt(date1[2]);
+  
+  var date2_year = parseInt(date2[0]);
+  var date2_month = parseInt(date2[1]);
+  var date2_day = parseInt(date2[2]);
+  
+  if ( date2_year === date1_year ) {
+    return true;
+  }
+  else if ( date2_year - date1_year === 1 ) {
+    if ( date2_month === date1_month ) {
+      if ( date2_day >= date1_day ) {
+        return false;
+      }
+      else {
+        return true;
+      }
+    }
+    if ( date2_month > date1_month ) {
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
+  else if ( date2_year - date1_year > 1 ) {
+    return false;
+  }
+  
+}
+
+
+makeFriendlyDates(["2022-09-05", "2023-09-05"]);
