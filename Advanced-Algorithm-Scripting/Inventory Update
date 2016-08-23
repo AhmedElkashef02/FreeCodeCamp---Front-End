@@ -1,0 +1,53 @@
+
+function updateInventory(arr1, arr2) {
+  var value;  
+  for ( var i = 0; i < arr2.length; i++) { //second array
+      var product_name2 = arr2[i][1];
+      var product_quantity2 = arr2[i][0];
+      for ( var x = 0; x < arr1.length; x++) { // first array
+        
+        value = false;
+        var product_name = arr1[x][1];
+        var product_quantity = arr1[x][0];
+        
+        if ( product_name === product_name2) { //if the same product exists
+          product_quantity += product_quantity2;
+          arr1[x][0] = product_quantity;
+          value = true;
+          break;
+        }
+        else { //if the product doesn't exist
+          value = false;
+        }
+        
+      }
+      if ( value === false) { //push the new product in the old array
+        arr1.push(arr2[i]);
+      }
+    }
+    
+    if ( arr1.length === 0 ) {
+      for ( var item in arr2 ) {
+        arr1.push(arr2[item]);
+      }
+    }
+    
+    //return in alphabetical order
+    var sort = [];
+    var answer = [];
+    for ( var g = 0; g<arr1.length; g++) {
+      sort.push(arr1[g][1]); 
+    }
+    sort = sort.sort();
+    for ( var sorted = 0; sorted<sort.length; sorted++) {
+      for ( var ar1 = 0; ar1<arr1.length; ar1++) {
+        if ( sort[sorted] === arr1[ar1][1] ) {
+          answer.push(arr1[ar1]);
+          break;
+        }
+      }
+    }
+    return answer;
+}
+
+updateInventory([], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]]);
