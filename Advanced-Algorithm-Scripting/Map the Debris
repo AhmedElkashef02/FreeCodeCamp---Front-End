@@ -1,0 +1,18 @@
+
+function orbitalPeriod(arr) {
+  var GM = 398600.4418;
+  var earthRadius = 6367.4447;
+  for ( var i = 0; i < arr.length; i++) {
+    var this_Obj = arr[i];
+    for ( var key in this_Obj ) {
+      if ( typeof(this_Obj[key]) === "number" ) {
+        var num = (2*Math.PI) * (Math.sqrt( Math.pow(earthRadius + this_Obj[key],3)/GM ) );
+        this_Obj["orbitalPeriod"] = Math.round(num);
+        delete this_Obj["avgAlt"];
+      }
+    }
+  }
+  return arr;
+}
+
+orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}]);
