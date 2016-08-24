@@ -1,0 +1,50 @@
+@import url(https://fonts.googleapis.com/css?family=Kranky);
+@import url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+@import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
+@import 'https://fonts.googleapis.com/css?family=Bungee';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body {
+  background-image: url("http://wallpoper.com/images/00/43/64/57/blurry-sunset_00436457.jpg");
+}
+
+h1 {
+  font-family: Kranky;
+  font-size: 90px;
+  color: c2c2c2;
+}
+
+h2 {
+  margin-top: -5px;
+  font-family: Shadows Into Light;
+  font-size: 50px;
+}
+
+#box {
+  height: 300px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+#quote {
+  margin-right: 20px;
+  margin-left: 20px;
+  font-size:45px;
+  color: white;
+  font-family: Roboto;
+}
+
+#marks {
+  font-size: 70px;  
+}
+
+#author {
+  text-align: right;
+  font-size: 20px;
+  color: white;
+}
+
+#text-box {
+  height: 290px;
+}
