@@ -1,0 +1,87 @@
+@import 'https://fonts.googleapis.com/css?family=Oswald';
+@import 'https://fonts.googleapis.com/css?family=Dosis';
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+
+body {
+  background-image: url("https://www.wikipediatldr.com/static/images/background_default.jpg");
+  background-size: 1370px 1000px;
+}
+
+
+h1 {
+  margin-top: 200px;
+  margin-left: auto;
+  font-family: Oswald;
+  font-size: 120px;
+  margin-bottom: 20px;
+}
+
+#search {
+  margin-left: 30%;
+  width: 500px;
+  padding:8px 15px;
+  background:rgba(255, 255, 255, 0.7);
+  border:0px solid #dbdbdb;
+}
+
+#search:focus {
+  outline-color: orange;
+}
+
+#button {
+  border-radius: 3px;
+  position: relative;
+  padding:6px 15px;
+  left:-8px;
+  border:3px solid #ff8833;
+  background-color:#ff8000;
+  color:#fafafa;
+}
+
+#button:hover  {
+  background-color:#ffffff;
+  color:#ff8000;
+}
+
+#pp {
+  font-family: Dosis;
+  font-size: 30px;
+}
+
+#id {
+  width: 30px;
+}
+
+#result {
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+h3 {
+  color: black;
+  margin-left: 20px;
+  margin-top: 20px;
+  font-family: Roboto;
+  font-weight: bold;
+}
+
+#resultanchor {
+  text-decoration: none;
+}
+
+p {
+  color: black;
+  margin-left: 20px;
+  font-family: Roboto;
+}
+
+#resultbox {
+  padding: 5px;
+  padding-top: 1px;
+}
+
+#resultbox:hover {
+  margin-right: 15px;
+  margin-left: 15px;
+  border-radius: 5px;
+}
