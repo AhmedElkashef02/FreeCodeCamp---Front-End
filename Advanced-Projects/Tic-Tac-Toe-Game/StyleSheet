@@ -1,0 +1,74 @@
+@import url(https://fonts.googleapis.com/css?family=Handlee);
+
+body {
+  background-color: black;
+}
+
+#tictactoe {
+  width: 560px; height: 560px;
+  margin: 30px auto;
+}
+
+div > a {
+  width: 184px; height: 185px;
+  float: left;
+  border: 1px solid white;
+  font-size: 130px;
+  text-align: center;
+  line-height: 180px;
+  font-family: sans;
+}
+
+#tictactoe a {
+  text-decoration: none;
+}
+
+#b1 {
+  border-top: black;
+  border-left: black;
+}
+#b2 {
+  border-top: black;
+}
+#b3 {
+  border-top: black;
+  border-right: black;
+}
+#b4 {
+  border-left: black;
+}
+#b6 {
+  border-right: black;
+}
+#b7 {
+  border-left: black;
+  border-bottom: black;
+}
+#b8 {
+  border-bottom: black;
+}
+#b9 {
+  border-bottom: black;
+  border-right: black;
+}
+
+#scores {
+  height: 100px;
+  width: 500px;
+  display: block;
+  margin: 0 auto 30px auto;
+}
+
+.col-lg-4 {
+  font-family: monospace;
+  font-size: 40px;
+  text-align: center;
+  color: white;
+}
+
+p {
+  text-align: center;
+  color: #cceeff;
+  font-family: Handlee;
+  font-size: 21px;
+}
