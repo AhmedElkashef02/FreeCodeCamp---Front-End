@@ -1,0 +1,86 @@
+@import url(https://fonts.googleapis.com/css?family=Handlee);
+
+body {
+  background-color: #00394d;
+}
+
+.container-fluid {
+  display: block;
+  margin: 50px auto;
+  width: 430px;
+  height: 440px;
+  background-color: white;
+  padding: 30px;
+  box-shadow: 0 4px 2px -2px rgba(0,0,0,0.4);
+  border-radius: 2px;
+}
+
+#screen {
+  background-color: #99ccff;
+  width: 100%;
+  height: 90px;
+  margin: 15px auto;
+  margin-bottom: 25px;
+  border-radius: 2px;
+  border: 2px solid #80bfff;
+  text-align: right;
+  padding: 15px;
+  font-size: 40px;
+  font-family: monospace;
+}
+
+
+.button {
+  width: 6em; height: 3em;
+  display: inline-block;
+  background-color: #f9f9f9;
+  border: 1px solid #d9d9d9;
+  margin: 3px;
+}
+
+.C {
+  width: 6em; height: 3em;
+  display: inline-block;
+  background-color: #d9534f;
+  border: 1px solid #d9d9d9;
+  margin: 3px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.button:hover {
+  border-color: #80aaff;
+}
+
+.equal {
+  background-color: #428bca;
+  color: white;
+  font-weight: bold;
+}
+
+.red {
+  background-color: #d9534f;
+  color: white;
+  font-weight: bold;
+}
+
+.black {
+  background-color: #ccddff;
+}
+
+#buttons {
+  width: 372px;
+  margin: auto;
+}
+
+p {
+  text-align: center;
+  color: #cceeff;
+  font-family: Handlee;
+  font-size: 21px;
+}
+
+.zero {
+  width: 178px;
+}
